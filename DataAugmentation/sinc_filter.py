@@ -39,7 +39,7 @@ class SincFilterTransform(ImageOnlyTransform):
                 return x
 
             def __call__(self, img):
-                img = torch.from_numpy(img).unsqueeze(0).float()
+                img = torch.from_numpy(img).unsqueeze(0).unsqueeze(0).float()
                 sinc_filter = self.filter.unsqueeze(0).unsqueeze(0)
                 filtered_image = F.conv2d(img, sinc_filter, padding=self.size//2)
                 return filtered_image.squeeze().numpy()

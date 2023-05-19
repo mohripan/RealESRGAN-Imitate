@@ -26,7 +26,7 @@ combined_augmentations = Compose([
 ], p=1)
 
 # Load the image
-image = Image.open('DataAugmentation/input.jpg')
+image = Image.open('Image/input.jpg')
 image = np.array(image)
 
 # Apply the augmentations
